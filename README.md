@@ -13,10 +13,3 @@ This project takes a user's cardiac related parameters and predict weather they 
 
 I used Logistic Regression Machine Learning algorithm to train the dataset into a model, and used Flask to shape this into a Web App using HTML, CSS.
 
-## Challenges we ran into
-
-This was my first time trying to integrate Flask with ML to make a web app, so yeah, faced some challenges in figuring out the methods.
-
-## Accomplishments that we're proud of
-
-The final polished, and working product I must say.
