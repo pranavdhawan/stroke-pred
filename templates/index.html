@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+ <div>
+	
+	</div>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<!-- <input type="text" name="YearsExperience" placeholder="YearsExperience" required="required" /> -->
+
+      <label for="gender">Gender</label>
+      <select name="gender" id="gender">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+      </select>
+      <br>
+      <label for="age">Age</label>
+      <input type="int" id="age" name="age">
+      <br>
+      <label for="hyp">Ever had Hypertension?</label>
+      <select name="hyp" id="hyp">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+      </select>
+      <br>
+      <label for="heart">Ever had a heart disease?</label>
+      <select name="heart" id="heart">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+      </select>
+      <br>
+      <label for="mar">Ever Married?</label>
+      <select name="mar" id="mar">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+      </select>
+      <br>
+      <label for="work">What is your work type?</label>
+      <select name="work" id="work">
+          <option value="0">Government</option>
+          <option value="1">I'm a child</option>
+          <option value="2">Private</option>
+          <option value="3">Self Employed</option>
+      </select>
+      <br>
+
+      <label for="res">What is your Residence type?</label>
+      <select name="res" id="res">
+          <option value="0">Rural</option>
+          <option value="1">Urban</option>
+      </select>
+      <br>
+      
+      <label for="gl">Enter your glucose lever:</label>
+      <input type="int" id="gl" name="gl">
+      <br>
+      <label for="bm">Enter your BMI:</label>
+      <input type="int" id="bm" name="bm">
+      <br>
+
+      <label for="sm">Do u smoke?</label>
+      <select name="sm" id="sm">
+          <option value="1">Formerly</option>
+          <option value="2">Never</option>
+          <option value="3">Regular</option>
+      </select>
+      
+      <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+   <div>
+    This model will predict with an accuracy of 95.6%
+   </div>
+
+ </div>
+
+
+</body>
+</html>
